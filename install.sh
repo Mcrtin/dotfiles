@@ -22,7 +22,7 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 # Install yay
-git clone https://aur.archlinux.org/yay-bin.git && (cd yay-bin && makepkg -si)
+git clone https://aur.archlinux.org/yay-bin.git && (cd yay-bin && sudo -u USERNAME makepkg -si)
 
 yay -S spotify-tui catppuccin-gtk-theme-mocha libinput-gestures --noconfirm
 
