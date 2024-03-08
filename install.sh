@@ -5,13 +5,17 @@ if [[ $UID != 0 ]]; then
     exit 1
 fi
 
+systemctl enable systemd-networkd.service 
+systemctl enable systemd-resolved.service 
+systemctl enable iwd.service
+
 # Configure X11
 cp -rT ./etc /etc
 # Copy dotfiles
 cp -rT .config ~/.config
 
 # Install packages
-pacman -S --needed git base-devel nvim qute translate-shell brightnessctl pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq
+pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq
 
 # Install LazyVim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
@@ -24,7 +28,7 @@ yay -S spotify-tui catppuccin-gtk-theme-mocha libinput-gestures --noconfirm
 
 # Install Catppuccin for Rofi
 git clone https://github.com/catppuccin/rofi.git
-bash install.sh
+bash rofi/install.sh
 
 # Install Catppuccin for alacritty
 curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
