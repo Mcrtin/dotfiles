@@ -39,7 +39,7 @@ yay -S spotify-tui catppuccin-gtk-theme-mocha libinput-gestures --noconfirm
 
 
 # Copy dotfiles
-cp -rT .config $HOMEDIR/.config 
+cp -rT $SCRIPT_DIR/.config $HOMEDIR/.config 
 
 # Install LazyVim
 git clone https://github.com/LazyVim/starter $HOMEDIR/.config/nvim
@@ -60,3 +60,8 @@ curl -LOC --output-dir $HOMEDIR/.config/alacritty https://github.com/catppuccin/
 git clone https://github.com/catppuccin/qutebrowser.git $HOMEDIR/.config/qutebrowser/catppuccin
 # Install Catppucccin for spotify-tui
 git clone https://github.com/catppuccin/spotify-tui.git $SCRIPT_DIR/spotify-tui && cp spotify-tui/mocha.yml $HOMEDIR/.config/spotify-tui/
+
+# Remove this clone
+cd SCRIPT_DIR
+cd ..
+rm -rf SCRIPT_DIR
