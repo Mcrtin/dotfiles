@@ -22,18 +22,20 @@ sudoFunc () {
     systemctl enable iwd.service
 
     # Configure X11
-    cp -rT ./etc /etc
+    cp -rT $SCRIPT_DIR/etc /etc
     
 
     # Install packages
-    pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq
+    pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq
 
-    yay -S spotify-tui catppuccin-gtk-theme-mocha libinput-gestures
+    
 
 }
 
 FUNC=$(declare -f sudoFunc)
 sudo -H bash -c "$FUNC; sudoFunc $*;"
+
+yay -S spotify-tui catppuccin-gtk-theme-mocha libinput-gestures --noconfirm
 
 
 # Copy dotfiles
