@@ -26,7 +26,6 @@ sudoFunc () {
     systemctl enable systemd-networkd.service 
     systemctl enable systemd-resolved.service 
     systemctl enable iwd.service
-    systemctl enable spotifyd.service
     
 
     # Install packages
@@ -67,3 +66,6 @@ curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritt
 git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/catppuccin
 # Install Catppucccin for spotify-tui
 git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spotify-tui/ && cp spotify-tui/mocha.yml ~/.config/spotify-tui/
+
+
+echo "To finish setup change the account details in .config/spotifyd/spotifyd.conf"

@@ -9,6 +9,7 @@ config.set("colors.webpage.darkmode.enabled", True)
 # last argument (optional, default is False): enable the plain look for the menu rows
 catppuccin.setup(c, 'mocha', True)
 
+c.content.javascript.clipboard = "access-paste"
 c.url.searchengines = {
     'DEFAULT':  'https://google.com/search?hl=en&q={}',
     '!a':       'https://www.amazon.com/s?k={}',
