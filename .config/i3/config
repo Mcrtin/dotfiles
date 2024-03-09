@@ -42,6 +42,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1% && $refresh_i3status
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%- && $refresh_i3status
+# music control
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -268,3 +273,4 @@ for_window [class="Rofi"] floating enable
 exec_always --no-startup-id dunst &
 exec_always --no-startup-id libinput-gestures-setup start &
 exec_always --no-startup-id copyq &
+exec_always --no-startup-id playerctld daemon &
