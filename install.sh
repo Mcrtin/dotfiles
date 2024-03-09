@@ -9,11 +9,13 @@ fi
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 HOMEDIR=$HOME
 
+cd $SCRIPT_DIR
+
 sudoFunc () {
 
     # Must be running as sudo
     if [[ $UID != 0 ]]; then
-        echo "Please run this script without sudo."
+        echo "Please run this script with sudo."
         exit 1
     fi
 
@@ -62,6 +64,6 @@ git clone https://github.com/catppuccin/qutebrowser.git $HOMEDIR/.config/qutebro
 git clone https://github.com/catppuccin/spotify-tui.git && cp spotify-tui/mocha.yml $HOMEDIR/.config/spotify-tui/
 
 # Remove this clone
-cd SCRIPT_DIR
+cd $SCRIPT_DIR
 cd ..
-rm -rf SCRIPT_DIR
+rm -rf $SCRIPT_DIR
