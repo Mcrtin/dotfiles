@@ -33,7 +33,7 @@ sudoFunc () {
     
 
     # Install packages
-    pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo
+    pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo screenfetch exa starship
 
     if [[$(tail -1 /etc/default/grub) == "GRUB_GFXMODE"*]];
     then
@@ -63,6 +63,8 @@ fi
 yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether --noconfirm
 
 
+# Configure Bash
+cp -f .bashrc ~
 
 
 # Install LazyVim
