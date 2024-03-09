@@ -7,7 +7,7 @@ if [[ $UID == 0 ]]; then
 fi
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
+cd $SCRIPT_DIR
 
 sudoFunc () {
 
