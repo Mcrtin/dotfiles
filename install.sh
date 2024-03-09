@@ -12,6 +12,9 @@ cd $SCRIPT_DIR
 # Copy dotfiles
 cp -rT .config ~/.config 
 
+# Install Catppuccin for grub
+git clone https://github.com/catppuccin/grub.git
+
 sudoFunc () {
 
     # Must be running as sudo
@@ -21,15 +24,19 @@ sudoFunc () {
     fi
 
     # Configure etc
-    cp -rT etc /etc
+    cp -rfT etc /etc
 
     systemctl enable systemd-networkd.service 
     systemctl enable systemd-resolved.service 
     systemctl enable iwd.service
     
+    # Instaall Catppuccin for grub
+    cp -r grub/src/* /usr/share/grub/themes/
+    echo "GRUB_THEME=\"/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt\"" >> /etc/default/grub
+    grub-mkconfig -o /boot/grub/grub.cfg
 
     # Install packages
-    pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq
+    pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter
 
 }
 
@@ -48,7 +55,7 @@ then
 fi
 
 
-yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures --noconfirm
+yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether --noconfirm
 
 
 
