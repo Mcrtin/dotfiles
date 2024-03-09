@@ -63,4 +63,4 @@ curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritt
 # Install Catppuccin for qute
 git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/catppuccin
 # Install Catppucccin for spotify-tui
-git clone https://github.com/catppuccin/spotify-tui.git && cp spotify-tui/mocha.yml ~/.config/spotify-tui/
+git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spotify-tui/ && cp spotify-tui/mocha.yml ~/.config/spotify-tui/
