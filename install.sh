@@ -55,7 +55,7 @@ rm -rf ~/.config/nvim/.git
 
 # Install Catppuccin for Rofi
 git clone https://github.com/catppuccin/rofi.git
-bash rofi/basic/install.sh
+(cd rofi/basic/ bash install.sh)
 
 
 # Install Catppuccin for alacritty
