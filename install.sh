@@ -38,6 +38,11 @@ sudoFunc () {
 FUNC=$(declare -f sudoFunc)
 sudo -H bash -c "$FUNC; sudoFunc $*;"
 
+
+
+systemctl enable --user spotifyd.service
+
+
 if ! command -v yay &> /dev/null
 then
     # Install yay

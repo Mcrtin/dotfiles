@@ -268,4 +268,3 @@ for_window [class="Rofi"] floating enable
 exec_always --no-startup-id dunst &
 exec_always --no-startup-id libinput-gestures-setup start &
 exec_always --no-startup-id copyq &
-exec_always --no-startup-id spotifyd --no-daemon &
