@@ -9,6 +9,9 @@ fi
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd $SCRIPT_DIR
 
+# Copy dotfiles
+cp -rT .config ~/.config 
+
 sudoFunc () {
 
     # Must be running as sudo
@@ -17,18 +20,19 @@ sudoFunc () {
         exit 1
     fi
 
+    # Configure etc
+    cp -rT etc /etc
+
     systemctl enable systemd-networkd.service 
     systemctl enable systemd-resolved.service 
     systemctl enable iwd.service
-
-    # Configure X11
-    cp -rT etc /etc
+    systemctl enable spotifyd.service
     
 
     # Install packages
-    pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq
+    pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq
 
-    
+    chmod 640 ~/.config/spotifyd/spotifyd.conf
 
 }
 
@@ -45,8 +49,7 @@ fi
 yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures --noconfirm
 
 
-# Copy dotfiles
-cp -rT .config ~/.config 
+
 
 # Install LazyVim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
