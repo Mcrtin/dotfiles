@@ -253,8 +253,8 @@ bindsym $mod+Print exec --no-startup-id maim -o --window=root | convert - \( +cl
 
 # gaps
 # gaps outer|horizontal|vertical|top|left|bottom|right <gap_size>[px]
-gaps outer 4
-gaps inner 4
+gaps outer 2
+gaps inner 6
 
 
 # RULEs 

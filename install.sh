@@ -47,10 +47,10 @@ rm -rf $HOMEDIR/.config/nvim/.git
 
 
 # Install yay
-git clone https://aur.archlinux.org/yay-bin.git $SCRIPT_DIR/yay-bin && (cd yay-bin && makepkg -si)
+git clone https://aur.archlinux.org/yay-bin.git && (cd yay-bin && makepkg -si)
 
 # Install Catppuccin for Rofi
-git clone https://github.com/catppuccin/rofi.git $SCRIPT_DIR/rofi
+git clone https://github.com/catppuccin/rofi.git
 bash rofi/basic/install.sh
 
 
@@ -59,7 +59,7 @@ curl -LOC --output-dir $HOMEDIR/.config/alacritty https://github.com/catppuccin/
 # Install Catppuccin for qute
 git clone https://github.com/catppuccin/qutebrowser.git $HOMEDIR/.config/qutebrowser/catppuccin
 # Install Catppucccin for spotify-tui
-git clone https://github.com/catppuccin/spotify-tui.git $SCRIPT_DIR/spotify-tui && cp spotify-tui/mocha.yml $HOMEDIR/.config/spotify-tui/
+git clone https://github.com/catppuccin/spotify-tui.git && cp spotify-tui/mocha.yml $HOMEDIR/.config/spotify-tui/
 
 # Remove this clone
 cd SCRIPT_DIR
