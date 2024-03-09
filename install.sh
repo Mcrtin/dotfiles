@@ -7,7 +7,6 @@ if [[ $UID == 0 ]]; then
 fi
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-HOMEDIR=$HOME
 
 cd $SCRIPT_DIR
 
@@ -39,13 +38,14 @@ sudo -H bash -c "$FUNC; sudoFunc $*;"
 
 yay -S spotify-tui catppuccin-gtk-theme-mocha libinput-gestures --noconfirm
 
+cd $SCRIPT_DIR
 
 # Copy dotfiles
-cp -rT $SCRIPT_DIR/.config $HOMEDIR/.config 
+cp -rT .config ~/.config 
 
 # Install LazyVim
-git clone https://github.com/LazyVim/starter $HOMEDIR/.config/nvim
-rm -rf $HOMEDIR/.config/nvim/.git
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
 
 
 # Install yay
@@ -57,11 +57,11 @@ bash rofi/basic/install.sh
 
 
 # Install Catppuccin for alacritty
-curl -LOC --output-dir $HOMEDIR/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
+curl -LOC --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
 # Install Catppuccin for qute
-git clone https://github.com/catppuccin/qutebrowser.git $HOMEDIR/.config/qutebrowser/catppuccin
+git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/catppuccin
 # Install Catppucccin for spotify-tui
-git clone https://github.com/catppuccin/spotify-tui.git && cp spotify-tui/mocha.yml $HOMEDIR/.config/spotify-tui/
+git clone https://github.com/catppuccin/spotify-tui.git && cp spotify-tui/mocha.yml ~/.config/spotify-tui/
 
 # Remove this clone
 cd $SCRIPT_DIR
