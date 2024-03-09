@@ -8,7 +8,6 @@ fi
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-cd $SCRIPT_DIR
 
 sudoFunc () {
 
@@ -23,7 +22,7 @@ sudoFunc () {
     systemctl enable iwd.service
 
     # Configure X11
-    cp -rT $SCRIPT_DIR/etc /etc
+    cp -rT etc /etc
     
 
     # Install packages
@@ -36,9 +35,8 @@ sudoFunc () {
 FUNC=$(declare -f sudoFunc)
 sudo -H bash -c "$FUNC; sudoFunc $*;"
 
-yay -S spotify-tui catppuccin-gtk-theme-mocha libinput-gestures --noconfirm
+yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures --noconfirm
 
-cd $SCRIPT_DIR
 
 # Copy dotfiles
 cp -rT .config ~/.config 
@@ -62,8 +60,3 @@ curl -LOC --output-dir ~/.config/alacritty https://github.com/catppuccin/alacrit
 git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/catppuccin
 # Install Catppucccin for spotify-tui
 git clone https://github.com/catppuccin/spotify-tui.git && cp spotify-tui/mocha.yml ~/.config/spotify-tui/
-
-# Remove this clone
-cd $SCRIPT_DIR
-cd ..
-rm -rf $SCRIPT_DIR
