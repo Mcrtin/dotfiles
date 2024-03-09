@@ -8,5 +8,5 @@
 alias ls='exa --icons -F -H --group-directories-first --git -1'
 alias grep='grep --color=auto'
 
-screenfetch
+neofetch
 eval "$(starship init bash)"
