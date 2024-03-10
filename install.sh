@@ -40,6 +40,8 @@ sudoFunc () {
     # Install packages
     pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk
 
+    # Removing i3lock so it doesn't conlict with i3lock-color for betterlockscreen
+    paman -Rs i3lock --noconfirm
     
 }
 
