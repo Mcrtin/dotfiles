@@ -1,4 +1,0 @@
-killall polybar 
-
-
-polybar &

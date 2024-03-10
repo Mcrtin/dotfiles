@@ -88,4 +88,4 @@ git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spoti
 
 feh --bg-scale ~/.config/feh/background.png
 
-echo -e "\033[1;37mTo finish setup change the account details in .config/spotifyd/spotifyd.conf"
+echo -e "\033[1;33mTo finish setup change the account details in .config/spotifyd/spotifyd.conf"
