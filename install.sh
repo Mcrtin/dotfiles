@@ -26,28 +26,25 @@ sudoFunc () {
     # Configure etc
     cp -rfT etc /etc
 
+    # Instaall Catppuccin for grub
+    cp -r grub/src/* /usr/share/grub/themes/
+
+    echo "GRUB_GFXMODE=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')" >> /etc/default/grub
+    grub-mkconfig -o /boot/grub/grub.cfg
+
     systemctl enable systemd-networkd.service 
     systemctl enable systemd-resolved.service 
     systemctl enable iwd.service
-    
     
 
     # Install packages
     pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship discord playerctl pamixer s-nail neofetch awk
 
-    if [[$(tail -1 /etc/default/grub) == "GRUB_GFXMODE"*]];
-    then
-        # Instaall Catppuccin for grub
-        cp -r grub/src/* /usr/share/grub/themes/
-        echo "GRUB_THEME=\"/usr/share/grub/themes/catppuccin-mocha-grub-theme/theme.txt\"" >> /etc/default/grub
-        echo "GRUB_GFXMODE=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')" >> /etc/default/grub
-        grub-mkconfig -o /boot/grub/grub.cfg
-    fi
+        
 }
 
 FUNC=$(declare -f sudoFunc)
 sudo -H bash -c "$FUNC; sudoFunc $*;"
-
 
 
 systemctl enable --user spotifyd.service
