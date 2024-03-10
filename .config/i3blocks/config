@@ -1,34 +1,40 @@
-command=~/.config/i3blocks/$BLOCK_NAME
 separator_block_width=15
 
 [music]
+command=$SCRIPT_DIR/music
 label= 🎧
 interval=1
 signal=3
 
 [mail]
+command=$SCRIPT_DIR/mail
 label=📧
 interval=1800
 signal=2
 
 [loadavg]
+command=$SCRIPT_DIR/loadavg
 label=
 interval=10
 markup=pango
 
 [disk]
+command=$SCRIPT_DIR/musdiskic
 label=🗄
 interval=3600
 
 [volume]
+command=$SCRIPT_DIR/volume
 interval=once
 signal=1
 
 [key_layout]
+command=$SCRIPT_DIR/key_layout
 label=⌨️
 interval=30
 
 [battery]
+command=$SCRIPT_DIR/battery
 interval=30
 LABEL=⚡
 
