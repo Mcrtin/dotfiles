@@ -1,4 +1,4 @@
-command=./$BLOCK_NAME
+command=~/.config/i3blocks/$BLOCK_NAME
 separator_block_width=15
 
 [music]
@@ -27,6 +27,10 @@ signal=1
 [key_layout]
 label=⌨️
 interval=30
+
+[battery]
+interval=30
+LABEL=⚡
 
 [date]
 label=📅
