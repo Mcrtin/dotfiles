@@ -32,6 +32,9 @@ sudoFunc () {
     echo "GRUB_GFXMODE=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')" >> /etc/default/grub
     grub-mkconfig -o /boot/grub/grub.cfg
 
+    # Font config
+    ln -s /usr/share/fontconfig/conf.avail/50-user.conf /etc/fonts/conf.d/
+    
     systemctl enable systemd-networkd.service 
     systemctl enable systemd-resolved.service 
     systemctl enable iwd.service
@@ -40,7 +43,7 @@ sudoFunc () {
     # Install packages
     pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship discord playerctl pamixer s-nail neofetch awk
 
-        
+    
 }
 
 FUNC=$(declare -f sudoFunc)
@@ -82,4 +85,4 @@ git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/ca
 git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spotify-tui/ && cp spotify-tui/mocha.yml ~/.config/spotify-tui/
 
 
-echo "To finish setup change the account details in .config/spotifyd/spotifyd.conf"
+echo "\033[1;37mTo finish setup change the account details in .config/spotifyd/spotifyd.conf"
