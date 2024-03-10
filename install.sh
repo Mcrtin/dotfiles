@@ -35,9 +35,9 @@ sudoFunc () {
     # Font config
     ln -s /usr/share/fontconfig/conf.avail/50-user.conf /etc/fonts/conf.d/
     
-    systemctl enable systemd-networkd.service 
-    systemctl enable systemd-resolved.service 
-    systemctl enable iwd.service
+    systemctl enable --now systemd-networkd.service 
+    systemctl enable --now systemd-resolved.service 
+    systemctl enable --now iwd.service
     
 
     # Install packages
@@ -50,8 +50,9 @@ FUNC=$(declare -f sudoFunc)
 sudo -H bash -c "$FUNC; sudoFunc $*;"
 
 
-systemctl enable --user spotifyd.service
+systemctl enable --now --user spotifyd.service
 
+brightnessctl set 30%
 
 if ! command -v yay &> /dev/null
 then
@@ -60,8 +61,9 @@ then
 fi
 
 
-yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether i3blocks-git --noconfirm
+yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether i3blocks-git auto-cpufreq --noconfirm
 
+sudo systemctl enable --now auto-cpufreq
 
 # Configure Bash
 cp -f .bashrc ~
