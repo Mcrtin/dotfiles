@@ -86,5 +86,6 @@ git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/ca
 # Install Catppucccin for spotify-tui
 git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spotify-tui/ && cp spotify-tui/mocha.yml ~/.config/spotify-tui/
 
+feh --bg-scale ~/.config/feh/background.png
 
-echo "\033[1;37mTo finish setup change the account details in .config/spotifyd/spotifyd.conf"
+echo -e "\033[1;37mTo finish setup change the account details in .config/spotifyd/spotifyd.conf"
