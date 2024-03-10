@@ -31,9 +31,6 @@ sudoFunc () {
 
     echo "GRUB_GFXMODE=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')" >> /etc/default/grub
     grub-mkconfig -o /boot/grub/grub.cfg
-
-    # Font config
-    ln -s /usr/share/fontconfig/conf.avail/50-user.conf /etc/fonts/conf.d/
     
     systemctl enable --now systemd-networkd.service 
     systemctl enable --now systemd-resolved.service 
@@ -50,8 +47,6 @@ FUNC=$(declare -f sudoFunc)
 sudo -H bash -c "$FUNC; sudoFunc $*;"
 
 
-systemctl enable --now --user spotifyd.service
-systemctl enable --now --user betterlockscreen@.service
 
 brightnessctl set 30%
 
@@ -65,6 +60,9 @@ fi
 yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq --noconfirm
 # Run this without no-confirm
 yay -S --needed betterlockscreen
+
+systemctl enable --now --user spotifyd.service
+systemctl enable --now --user betterlockscreen@.service
 
 sudo systemctl enable --now auto-cpufreq
 
@@ -92,4 +90,4 @@ git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spoti
 feh --bg-scale ~/.config/wallpapers/background.png
 betterlockscreen -u ~/.config/wallpapers/background.png
 
-echo -e "\033[1;33mTo finish setup change the account details in .config/spotifyd/spotifyd.conf"
+echo -e "\033[1;36mTo finish setup change the account details in .config/spotifyd/spotifyd.conf\033[om"
