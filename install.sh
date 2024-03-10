@@ -61,7 +61,7 @@ then
 fi
 
 
-yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether i3blocks-git auto-cpufreq --noconfirm
+yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq --noconfirm
 
 sudo systemctl enable --now auto-cpufreq
 
