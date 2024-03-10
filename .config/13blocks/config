@@ -24,6 +24,10 @@ interval=3600
 interval=once
 signal=1
 
+[key_layout]
+label=⌨️
+interval=30
+
 [date]
 label=📅
 interval=5
