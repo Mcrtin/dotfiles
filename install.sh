@@ -36,7 +36,7 @@ sudoFunc () {
     systemctl enable --now systemd-resolved.service 
     systemctl enable --now iwd.service
     
-    
+
     # Removing i3lock so it doesn't conlict with i3lock-color for betterlockscreen
     paman -Rs i3lock --noconfirm
     
@@ -66,8 +66,8 @@ fi
 yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq betterlockscreen fwupd-git --noconfirm
 
 systemctl enable --now --user spotifyd.service
-systemctl enable --now --user betterlockscreen@.service
 
+sudo systemctl enable betterlockscreen@$USER.service
 sudo systemctl enable --now auto-cpufreq
 
 # Configure Bash
