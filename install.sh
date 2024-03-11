@@ -36,12 +36,16 @@ sudoFunc () {
     systemctl enable --now systemd-resolved.service 
     systemctl enable --now iwd.service
     
-
-    # Install packages
-    pacman -S --needed man-db tldr git base-devel neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk
-
+    
     # Removing i3lock so it doesn't conlict with i3lock-color for betterlockscreen
     paman -Rs i3lock --noconfirm
+    
+    # Update all packages
+    pacman -Syu --noconfirm
+
+    # Install packages
+    pacman -S --needed man-db tldr git base-devel jack2 neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk
+
     
 }
 
@@ -59,9 +63,7 @@ then
 fi
 
 
-yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq --noconfirm
-# Run this without no-confirm
-yay -S --needed betterlockscreen
+yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq betterlockscreen fwupd-git --noconfirm
 
 systemctl enable --now --user spotifyd.service
 systemctl enable --now --user betterlockscreen@.service
