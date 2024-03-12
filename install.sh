@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 # Require no permissions
 if [[ $UID == 0 ]]; then
     echo "Please run this script without sudo."
@@ -32,9 +34,8 @@ sudoFunc () {
     echo "GRUB_GFXMODE=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')" >> /etc/default/grub
     grub-mkconfig -o /boot/grub/grub.cfg
     
-    systemctl enable --now systemd-networkd.service 
-    systemctl enable --now systemd-resolved.service 
-    systemctl enable --now iwd.service
+    systemctl enable systemd-networkd.service 
+    systemctl enable systemd-resolved.service 
     
 
     # Removing i3lock so it doesn't conlict with i3lock-color for betterlockscreen
@@ -44,9 +45,10 @@ sudoFunc () {
     pacman -Syu --noconfirm
 
     # Install packages
-    pacman -S --needed man-db tldr git base-devel jack2 neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk picom
+    pacman -S --needed man-db tldr git base-devel jack2 neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk picom iwd networkmanager iio-sensor-proxy --noconfirm
 
-    
+    systemctl enable NetworkManager.service
+    systemctl enable iio-sensor-proxy
 }
 
 FUNC=$(declare -f sudoFunc)
@@ -63,12 +65,12 @@ then
 fi
 
 
-yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq betterlockscreen fwupd-git --noconfirm
+yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq betterlockscreen fwupd-git networkmanager --noconfirm
 
-systemctl enable --now --user spotifyd.service
+systemctl enable--user spotifyd.service
 
 sudo systemctl enable betterlockscreen@$USER.service
-sudo systemctl enable --now auto-cpufreq
+sudo systemctl enable auto-cpufreq
 
 # Configure Bash
 cp -f .bashrc ~
@@ -94,4 +96,4 @@ git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spoti
 feh --bg-scale ~/.config/wallpapers/background.png
 betterlockscreen -u ~/.config/wallpapers/background.png
 
-echo -e "\033[1;36mTo finish setup change the account details in .config/spotifyd/spotifyd.conf\033[om"
+echo -e "\033[1;36mTo finish setup change the account details in .config/spotifyd/spotifyd.conf\e[0m"
