@@ -35,13 +35,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1% && $refresh_i3status
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%- && $refresh_i3status
+set $refresh_bar pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_bar
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_bar
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_bar
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_bar
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1% && $refresh_bar
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%- && $refresh_bar
 # music control
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -226,6 +226,13 @@ client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
+bar {
+  position top                  # Position should be 'bottom' or 'top'.
+  status_command i3blocks       # Invoke i3blocks.
+
+  # Possible other bar configurations go here...
+  # ...
+}
 
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+b exec --no-startup-id qutebrowser
@@ -260,4 +267,4 @@ exec_always --no-startup-id copyq &
 exec --no-startup-id picom -b &
 exec_always --no-startup-id playerctld daemon &
 exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/background.png &
-exec_always --no-startup-id polybar &
+# exec_always --no-startup-id polybar &

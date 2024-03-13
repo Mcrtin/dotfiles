@@ -43,7 +43,7 @@ sudoFunc () {
     pacman -Syu --noconfirm
 
     # Install packages
-    pacman -S --needed man-db tldr git base-devel jack2 neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk picom iwd networkmanager iio-sensor-proxy --noconfirm
+    pacman -S --needed man-db tldr git base-devel jack2 neovim qutebrowser translate-shell brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk picom iwd networkmanager iio-sensor-proxy noto-fonts-emoji sysstat python python-requests lm_sensors --noconfirm
 
     systemctl enable NetworkManager.service
     systemctl enable iio-sensor-proxy
@@ -94,4 +94,8 @@ git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spoti
 feh --bg-scale ~/.config/wallpapers/background.png
 betterlockscreen -u ~/.config/wallpapers/background.png
 
-echo -e "\033[1;36mTo finish setup, change the account details in .config/spotifyd/spotifyd.conf\e[0m"
+git clone https://github.com/miklhh/i3blocks-config.git
+(cd i3blocks-config && yes | bash install.sh)
+
+echo -e "\033[1;36mTo finish setup, change the account details in file://~/.config/spotifyd/spotifyd.conf and change the weather forecast URL in file://~/.config/i3blocks/weather
+/weather.py \e[0m"
