@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -eu
-
 # Require no permissions
 if [[ $UID == 0 ]]; then
     echo "Please run this script without sudo."
