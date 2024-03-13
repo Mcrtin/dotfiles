@@ -229,9 +229,19 @@ client.background        $base
 bar {
   position top                  # Position should be 'bottom' or 'top'.
   status_command i3blocks       # Invoke i3blocks.
-
-  # Possible other bar configurations go here...
-  # ...
+  
+  colors {
+    background         $base
+    statusline         $text
+    focused_statusline $text
+    active_workspace   $base $text $blue
+    focused_separator  $base
+    focused_workspace  $base $base $green
+    active_workspace   $base $base $blue
+    inactive_workspace $base $base $surface1
+    urgent_workspace   $base $base $surface1
+    binding_mode       $base $base $surface1
+  }
 }
 
 bindsym $mod+d exec --no-startup-id rofi -show drun
