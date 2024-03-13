@@ -67,7 +67,7 @@ fi
 
 yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq betterlockscreen networkmanager --noconfirm
 
-systemctl enable--user spotifyd.service
+systemctl enable --user spotifyd.service
 
 sudo systemctl enable betterlockscreen@$USER.service
 sudo systemctl enable auto-cpufreq
