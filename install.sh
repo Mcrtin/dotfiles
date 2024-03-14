@@ -49,6 +49,7 @@ sudoFunc () {
 
     systemctl enable NetworkManager.service
     systemctl enable iio-sensor-proxy
+
 }
 
 FUNC=$(declare -f sudoFunc)
@@ -65,8 +66,9 @@ then
 fi
 
 
-yay -S --needed spotify-tui catppuccin-gtk-theme-mocha libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq betterlockscreen networkmanager --noconfirm
+yay -S --needed spotify-tui catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq betterlockscreen networkmanager pulseaudio-ctl --noconfirm
 
+systemctl enable --user pulseaudio
 systemctl enable --user spotifyd.service
 
 sudo systemctl enable betterlockscreen@$USER.service
@@ -95,9 +97,6 @@ git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spoti
 
 feh --bg-scale ~/.config/wallpapers/background.png
 betterlockscreen -u ~/.config/wallpapers/background.png
-
-git clone https://github.com/miklhh/i3blocks-config.git
-(cd i3blocks-config && yes | bash install.sh)
 
 echo -e "\033[1;36mTo finish setup, change the account details in file://~/.config/spotifyd/spotifyd.conf and change the weather forecast URL in file://~/.config/i3blocks/weather
 /weather.py \e[0m"
