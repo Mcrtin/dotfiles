@@ -45,7 +45,7 @@ border_bottom=0
 border_left=0
 
 [home]
-command=df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#50fa7b\">GiB</span>\n", $4 }'
+command= [df -h / | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); print $4 }' != df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); print $4 }'] && df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#50fa7b\">GiB</span>\n", $4 }'
 interval=3
 label=<span color="#50fa7b"> </span>
 border=#50fa7b
