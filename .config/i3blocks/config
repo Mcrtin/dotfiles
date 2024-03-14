@@ -5,6 +5,7 @@ separator_block_width=15
 markup=pango
 
 [battery]
+command=bash ~/.config/i3blocks/battery.sh
 interval=2
 color=#ff5555
 border=#ff5555
@@ -29,15 +30,6 @@ command=playerctl metadata --format "{{ artist }} <span color=\"#bd93f9\">-</spa
 interval=2
 label=<span color="#bd93f9"> </span>
 border=#bd93f9
-border_top=1
-border_right=0
-border_bottom=0
-border_left=0
-
-[arch_update]
-command=[[checkupdates | wc -l == 0]] && echo '<span color="#1793d1"> </span>'
-interval=once
-border=#1793d1
 border_top=1
 border_right=0
 border_bottom=0
@@ -114,7 +106,7 @@ border_bottom=0
 border_left=0
 
 [date]
-command=date '+%Y 年 %B %d 日 %A。' | awk '{ printf "%s<span color=\"#ff5555\">%s%s</span>%s<span color=\"#ff5555\">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
+command=date '+%Y %B %d %A' | awk '{ printf "%s<span color=\"#ff5555\">%s%s</span>%s<span color=\"#ff5555\">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
 interval=60
 label=<span color="#ff5555"> </span>
 border=#ff5555
