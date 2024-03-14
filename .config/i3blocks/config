@@ -35,9 +35,8 @@ border_bottom=0
 border_left=0
 
 [arch_update]
-command=checkupdates | wc -l
+command=[[checkupdates | wc -l == 0]] && echo '<span color="#1793d1"> </span>'
 interval=once
-label=<span color="#1793d1"> </span>
 border=#1793d1
 border_top=1
 border_right=0
