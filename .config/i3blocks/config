@@ -4,11 +4,11 @@ color=#f8f8f2
 separator_block_width=15
 markup=pango
 
-[battery]
-command=bash ~/.config/i3blocks/battery.sh
+[mediaplayer]
+command=playerctl metadata --format "{{ artist }} <span color=\"#bd93f9\">-</span> {{ title }}"
 interval=2
-color=#ff5555
-border=#ff5555
+label=<span color="#bd93f9"> </span>
+border=#bd93f9
 border_top=1
 border_right=0
 border_bottom=0
@@ -25,11 +25,11 @@ border_right=0
 border_bottom=0
 border_left=0
 
-[mediaplayer]
-command=playerctl metadata --format "{{ artist }} <span color=\"#bd93f9\">-</span> {{ title }}"
-interval=2
-label=<span color="#bd93f9"> </span>
-border=#bd93f9
+[battery]
+command=bash ~/.config/i3blocks/battery.sh
+interval=10
+color=#ff5555
+border=#ff5555
 border_top=1
 border_right=0
 border_bottom=0
@@ -106,7 +106,7 @@ border_bottom=0
 border_left=0
 
 [date]
-command=date '+%Y %B %d %A' | awk '{ printf "%s<span color=\"#ff5555\">%s%s</span>%s<span color=\"#ff5555\">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
+command=date '+%Y %B %d %A' | awk '{ printf "%s <span color=\"#ff5555\">%s %s</span> %s <span color=\"#ff5555\">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
 interval=60
 label=<span color="#ff5555"> </span>
 border=#ff5555

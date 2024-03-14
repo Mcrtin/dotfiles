@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # If ACPI was not installed, this probably is a battery-less computer.
 ACPI_RES=$(acpi -b)
-if [ $ACPI_RES ]
+if [[ $ACPI_RES ]]
 then
     # Get essential information. Due to som bug with some versions of acpi it is
     # worth filtering the ACPI result from all lines containing "unavailable".
