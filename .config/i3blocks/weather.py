@@ -9,54 +9,54 @@ Icon = namedtuple('Icon', 'day night')
 # All Hex Codes from https://erikflowers.github.io/weather-icons/
 # All Weather Codes from https://www.worldweatheronline.com/developer/api/docs/weather-icons.aspx
 CODE_TO_ICON = {
-    "113": ('\uf00d', '\uf02e'),  # Clear/Sunny
-    "116": ('\uf002', '\uf086'),  # Partly Cloudy
-    "119": ('\uf002', '\uf086'),  # Cloudy
-    "122": ('\uf013', '\uf031'),  # Overcast
-    "143": ('\uf019', '\uf083'),  # Mist
-    "176": ('\uf01e', '\uf06b'),  # Patchy rain possible
-    "179": ('\uf01e', '\uf06b'),  # Patchy snow possible
-    "182": ('\uf01e', '\uf06b'),  # Patchy sleet possible
-    "185": ('\uf01e', '\uf06b'),  # Patchy freezing drizzle possible
-    "200": ('\uf01a', '\uf01a'),  # Thundery outbreaks possible
-    "227": ('\uf019', '\uf083'),  # Blowing snow
-    "230": ('\uf01b', '\uf01b'),  # Blizzard
-    "248": ('\uf002', '\uf086'),  # Fog
-    "260": ('\uf01e', '\uf06b'),  # Freezing fog
-    "263": ('\uf01a', '\uf01a'),  # Patchy light drizzle
-    "266": ('\uf01a', '\uf01a'),  # Light drizzle
-    "281": ('\uf01a', '\uf01a'),  # Freezing drizzle
-    "284": ('\uf01a', '\uf01a'),  # Heavy freezing drizzle
-    "293": ('\uf01a', '\uf01a'),  # Patchy light rain
-    "296": ('\uf01a', '\uf01a'),  # Light rain
-    "299": ('\uf01a', '\uf01a'),  # Moderate rain at times
-    "302": ('\uf01a', '\uf01a'),  # Moderate rain
-    "305": ('\uf01a', '\uf01a'),  # Heavy rain at times
-    "308": ('\uf01a', '\uf01a'),  # Heavy rain
-    "311": ('\uf01a', '\uf01a'),  # Light freezing rain
-    "314": ('\uf01a', '\uf01a'),  # Moderate or heavy freezing rain
-    "317": ('\uf01a', '\uf01a'),  # Light sleet
-    "320": ('\uf01a', '\uf01a'),  # Moderate or heavy sleet
-    "323": ('\uf01a', '\uf01a'),  # Patchy light snow
-    "326": ('\uf01a', '\uf01a'),  # Light snow
-    "329": ('\uf01a', '\uf01a'),  # Patchy moderate snow
-    "332": ('\uf01a', '\uf01a'),  # Moderate snow
-    "335": ('\uf01a', '\uf01a'),  # Patchy heavy snow
-    "338": ('\uf01a', '\uf01a'),  # Heavy snow
-    "350": ('\uf01a', '\uf01a'),  # Ice pellets
-    "353": ('\uf01a', '\uf01a'),  # Light rain shower
-    "356": ('\uf01a', '\uf01a'),  # Moderate or heavy rain shower
-    "359": ('\uf01a', '\uf01a'),  # Torrential rain shower
-    "362": ('\uf01a', '\uf01a'),  # Light sleet showers
-    "365": ('\uf01a', '\uf01a'),  # Moderate or heavy sleet showers
-    "368": ('\uf01a', '\uf01a'),  # Light snow showers
-    "371": ('\uf01a', '\uf01a'),  # Moderate or heavy snow showers
-    "374": ('\uf01a', '\uf01a'),  # Light showers of ice pellets
-    "377": ('\uf01a', '\uf01a'),  # Moderate or heavy showers of ice pellets
-    "386": ('\uf01a', '\uf01a'),  # Patchy light rain with thunder
-    "389": ('\uf01a', '\uf01a'),  # Moderate or heavy rain with thunder
-    "392": ('\uf01a', '\uf01a'),  # Patchy light snow with thunder
-    "395": ('\uf01a', '\uf01a')   # Moderate or heavy snow with thunder
+    "113": Icon('\ue33d', '\ue32b'),  # Sunny / Clear
+    "116": Icon('\ue302', '\ue32e'),  # Partly Cloudy
+    "119": Icon('\ue312', '\ue32e'),  # Cloudy
+    "122": Icon('\ue343', '\ue343'),  # Overcast
+    "143": Icon('\ue313', '\ue346'),  # Mist
+    "176": Icon('\ue318', '\ue333'),  # Patchy rain possible
+    "179": Icon('\ue31a', '\ue335'),  # Patchy snow possible
+    "182": Icon('\ue318', '\ue317'),  # Patchy sleet possible
+    "185": Icon('\ue318', '\ue321'),  # Patchy freezing drizzle possible
+    "200": Icon('\ue31d', '\ue31d'),  # Thundery outbreaks possible
+    "227": Icon('\ue314', '\ue338'),  # Blowing snow
+    "230": Icon('\ue31e', '\ue31e'),  # Blizzard
+    "248": Icon('\ue313', '\ue313'),  # Fog
+    "260": Icon('\ue313', '\ue326'),  # Freezing fog
+    "263": Icon('\ue315', '\ue315'),  # Patchy light drizzle
+    "266": Icon('\ue315', '\ue315'),  # Light drizzle
+    "281": Icon('\ue321', '\ue321'),  # Freezing drizzle
+    "284": Icon('\ue321', '\ue321'),  # Heavy freezing drizzle
+    "293": Icon('\ue315', '\ue315'),  # Patchy light rain
+    "296": Icon('\ue315', '\ue315'),  # Light rain
+    "299": Icon('\ue315', '\ue315'),  # Moderate rain at times
+    "302": Icon('\ue315', '\ue315'),  # Moderate rain
+    "305": Icon('\ue315', '\ue315'),  # Heavy rain at times
+    "308": Icon('\ue315', '\ue315'),  # Heavy rain
+    "311": Icon('\ue315', '\ue315'),  # Light freezing rain
+    "314": Icon('\ue315', '\ue315'),  # Moderate or heavy freezing rain
+    "317": Icon('\ue315', '\ue315'),  # Light sleet
+    "320": Icon('\ue315', '\ue315'),  # Moderate or heavy sleet
+    "323": Icon('\ue315', '\ue315'),  # Patchy light snow
+    "326": Icon('\ue315', '\ue315'),  # Light snow
+    "329": Icon('\ue315', '\ue315'),  # Patchy moderate snow
+    "332": Icon('\ue315', '\ue315'),  # Moderate snow
+    "335": Icon('\ue315', '\ue315'),  # Patchy heavy snow
+    "338": Icon('\ue315', '\ue315'),  # Heavy snow
+    "350": Icon('\ue315', '\ue315'),  # Ice pellets
+    "353": Icon('\ue315', '\ue315'),  # Light rain shower
+    "356": Icon('\ue315', '\ue315'),  # Moderate or heavy rain shower
+    "359": Icon('\ue315', '\ue315'),  # Torrential rain shower
+    "362": Icon('\ue315', '\ue315'),  # Light sleet showers
+    "365": Icon('\ue315', '\ue315'),  # Moderate or heavy sleet showers
+    "368": Icon('\ue315', '\ue315'),  # Light snow showers
+    "371": Icon('\ue315', '\ue315'),  # Moderate or heavy snow showers
+    "374": Icon('\ue315', '\ue315'),  # Light showers of ice pellets
+    "377": Icon('\ue315', '\ue315'),  # Moderate or heavy showers of ice pellets
+    "386": Icon('\ue315', '\ue315'),  # Patchy light rain with thunder
+    "389": Icon('\ue315', '\ue315'),  # Moderate or heavy rain with thunder
+    "392": Icon('\ue315', '\ue315'),  # Patchy light snow with thunder
+    "395": Icon('\ue315', '\ue315')   # Moderate or heavy snow with thunder
 }
 
 
