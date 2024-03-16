@@ -36,7 +36,7 @@ base      ='#1e1e2e'
 mantle    ='#181825'
 crust     ='#11111b'
 
-[mediaplayer]
+[music]
 command=playerctl metadata --format "{{ artist }} <span color=\"#cba6f7\">-</span> {{ title }}"
 interval=2
 label=<span color="#cba6f7"> </span>
