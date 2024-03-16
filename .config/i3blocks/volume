@@ -8,6 +8,7 @@ case $BLOCK_BUTTON in
 esac
 
 #Toggle mute
-[[ $(pamixer --get-mute) = "true" ]] && echo -n 🔇 && exit
+[[ $(pamixer --get-mute) = "true" ]] && echo -ne '<span color=\"#b4befe\">%</span>'&& exit
 #Display volume
-echo 🔊 $(pamixer --get-volume)%;
+[[ $(pamixer --get-volume) = 0 ]] && echo -n ' ' || [[ $(pamixer --get-volume) < 50 ]] && echo -n ' ' echo -n '  ';
+echo $(pamixer --get-volume)%
