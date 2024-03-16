@@ -9,55 +9,56 @@ Icon = namedtuple('Icon', 'day night')
 # All Hex Codes from https://erikflowers.github.io/weather-icons/
 # All Weather Codes from https://www.worldweatheronline.com/developer/api/docs/weather-icons.aspx
 CODE_TO_ICON = {
-            "113": Icon('\uf00d', '\uf02e'),
-            "116": Icon('\uf002', '\uf081'),
-            "119": Icon('\uf002', '\uf031'),
-            "122": Icon('\uf07d', '\uf080'),
-            "143": Icon('\uf003', '\uf04a'),
-            "176": Icon('\uf009', '\uf029'),
-            "179": Icon('\uf006', '\uf026'),
-            "182": Icon('\uf0b2', '\uf0b4'),
-            "185": Icon('\uf0b2', '\uf0b4'),
-            "200": Icon('\uf00e', '\uf02c'),
-            "227": Icon('\uf00a', '\uf02a'),
-            "230": Icon('\uf076', '\uf076'),
-            "248": Icon('\uf003', '\uf04a'),
-            "260": Icon('\uf003', '\uf04a'),
-            "263": Icon('\uf009', '\uf029'),
-            "266": Icon('\uf0b2', '\uf0b4'),
-            "281": Icon('\uf0b2', '\uf0b4'),
-            "284": Icon('\uf0b2', '\uf0b4'),
-            "293": Icon('\uf0b2', '\uf0b4'),
-            "296": Icon('\uf0b2', '\uf0b4'),
-            "299": Icon('\uf008', '\uf028'),
-            "302": Icon('\uf008', '\uf028'),
-            "305": Icon('\uf008', '\uf028'),
-            "308": Icon('\uf008', '\uf028'),
-            "311": Icon('\uf0b2', '\uf0b4'),
-            "314": Icon('\uf0b2', '\uf0b4'),
-            "317": Icon('\uf0b2', '\uf0b4'),
-            "320": Icon('\uf00a', '\uf02a'),
-            "323": Icon('\uf00a', '\uf02a'),
-            "326": Icon('\uf00a', '\uf02a'),
-            "329": Icon('\uf076', '\uf076'),
-            "332": Icon('\uf076', '\uf076'),
-            "335": Icon('\uf076', '\uf076'),
-            "338": Icon('\uf076', '\uf076'),
-            "350": Icon('\uf0b2', '\uf0b4'),
-            "353": Icon('\uf009', '\uf029'),
-            "356": Icon('\uf008', '\uf028'),
-            "359": Icon('\uf008', '\uf028'),
-            "362": Icon('\uf006', '\uf026'),
-            "365": Icon('\uf006', '\uf026'),
-            "368": Icon('\uf00a', '\uf02a'),
-            "371": Icon('\uf076', '\uf076'),
-            "374": Icon('\uf006', '\uf026'),
-            "377": Icon('\uf0b2', '\uf0b4'),
-            "386": Icon('\uf00e', '\uf02c'),
-            "389": Icon('\uf010', '\uf02d'),
-            "392": Icon('\uf06b', '\uf06d'),
-            "395": Icon('\uf076', '\uf076'),
+    "113": ('\uf00d', '\uf02e'),  # Clear/Sunny
+    "116": ('\uf002', '\uf086'),  # Partly Cloudy
+    "119": ('\uf002', '\uf086'),  # Cloudy
+    "122": ('\uf013', '\uf031'),  # Overcast
+    "143": ('\uf019', '\uf083'),  # Mist
+    "176": ('\uf01e', '\uf06b'),  # Patchy rain possible
+    "179": ('\uf01e', '\uf06b'),  # Patchy snow possible
+    "182": ('\uf01e', '\uf06b'),  # Patchy sleet possible
+    "185": ('\uf01e', '\uf06b'),  # Patchy freezing drizzle possible
+    "200": ('\uf01a', '\uf01a'),  # Thundery outbreaks possible
+    "227": ('\uf019', '\uf083'),  # Blowing snow
+    "230": ('\uf01b', '\uf01b'),  # Blizzard
+    "248": ('\uf002', '\uf086'),  # Fog
+    "260": ('\uf01e', '\uf06b'),  # Freezing fog
+    "263": ('\uf01a', '\uf01a'),  # Patchy light drizzle
+    "266": ('\uf01a', '\uf01a'),  # Light drizzle
+    "281": ('\uf01a', '\uf01a'),  # Freezing drizzle
+    "284": ('\uf01a', '\uf01a'),  # Heavy freezing drizzle
+    "293": ('\uf01a', '\uf01a'),  # Patchy light rain
+    "296": ('\uf01a', '\uf01a'),  # Light rain
+    "299": ('\uf01a', '\uf01a'),  # Moderate rain at times
+    "302": ('\uf01a', '\uf01a'),  # Moderate rain
+    "305": ('\uf01a', '\uf01a'),  # Heavy rain at times
+    "308": ('\uf01a', '\uf01a'),  # Heavy rain
+    "311": ('\uf01a', '\uf01a'),  # Light freezing rain
+    "314": ('\uf01a', '\uf01a'),  # Moderate or heavy freezing rain
+    "317": ('\uf01a', '\uf01a'),  # Light sleet
+    "320": ('\uf01a', '\uf01a'),  # Moderate or heavy sleet
+    "323": ('\uf01a', '\uf01a'),  # Patchy light snow
+    "326": ('\uf01a', '\uf01a'),  # Light snow
+    "329": ('\uf01a', '\uf01a'),  # Patchy moderate snow
+    "332": ('\uf01a', '\uf01a'),  # Moderate snow
+    "335": ('\uf01a', '\uf01a'),  # Patchy heavy snow
+    "338": ('\uf01a', '\uf01a'),  # Heavy snow
+    "350": ('\uf01a', '\uf01a'),  # Ice pellets
+    "353": ('\uf01a', '\uf01a'),  # Light rain shower
+    "356": ('\uf01a', '\uf01a'),  # Moderate or heavy rain shower
+    "359": ('\uf01a', '\uf01a'),  # Torrential rain shower
+    "362": ('\uf01a', '\uf01a'),  # Light sleet showers
+    "365": ('\uf01a', '\uf01a'),  # Moderate or heavy sleet showers
+    "368": ('\uf01a', '\uf01a'),  # Light snow showers
+    "371": ('\uf01a', '\uf01a'),  # Moderate or heavy snow showers
+    "374": ('\uf01a', '\uf01a'),  # Light showers of ice pellets
+    "377": ('\uf01a', '\uf01a'),  # Moderate or heavy showers of ice pellets
+    "386": ('\uf01a', '\uf01a'),  # Patchy light rain with thunder
+    "389": ('\uf01a', '\uf01a'),  # Moderate or heavy rain with thunder
+    "392": ('\uf01a', '\uf01a'),  # Patchy light snow with thunder
+    "395": ('\uf01a', '\uf01a')   # Moderate or heavy snow with thunder
 }
+
 
 class WttrApi:
     def __init__(self, city, unit_degree):
