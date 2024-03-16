@@ -66,7 +66,7 @@ then
 fi
 
 
-yay -S --needed spotify-tui catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq betterlockscreen networkmanager pulseaudio-ctl --noconfirm
+yay -S --needed spotify-tui catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git libinput-gestures lightdm-webkit-theme-aether polybar auto-cpufreq betterlockscreen networkmanager pulseaudio-ctl xkb-switch --noconfirm
 
 systemctl enable --user pulseaudio
 systemctl enable --user spotifyd.service

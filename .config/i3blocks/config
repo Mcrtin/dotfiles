@@ -35,6 +35,16 @@ border_right=0
 border_bottom=0
 border_left=0
 
+[keyboard]
+command=bash ~/.config/i3blocks/xkb_layout
+interval=persist
+label=<span color="#50fa7b"> </span>
+border=#50fa7b
+border_top=1
+border_right=0
+border_bottom=0
+border_left=0
+
 [home]
 command= [df -h / | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); print $4 }' != df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); print $4 }'] && df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#50fa7b\">GiB</span>\n", $4 }'
 interval=3
@@ -90,6 +100,16 @@ command=pulseaudio-ctl full-status | awk '{ printf "%i<span color=\"#bd93f9\">%<
 interval=1
 label=<span color="#bd93f9"> </span>
 border=#bd93f9
+border_top=1
+border_right=0
+border_bottom=0
+border_left=0
+
+[weather]
+command=bash ~/.config/i3blocks/weather.py
+interval=600
+label=<span color="#ff5555"> </span>
+border=#ff5555
 border_top=1
 border_right=0
 border_bottom=0
