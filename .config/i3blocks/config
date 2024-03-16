@@ -37,10 +37,10 @@ mantle    ='#181825'
 crust     ='#11111b'
 
 [mediaplayer]
-command=playerctl metadata --format "{{ artist }} <span color=\"#bd93f9\">-</span> {{ title }}"
+command=playerctl metadata --format "{{ artist }} <span color=\"#cba6f7\">-</span> {{ title }}"
 interval=2
-label=<span color="#bd93f9"> </span>
-border=mauve
+label=<span color="#cba6f7"> </span>
+border=#cba6f7
 border_top=1
 border_right=0
 border_bottom=0
@@ -50,8 +50,8 @@ border_left=0
 command=iwgetid -r | tr '\n' ' ' && grep $(iwgetid -m | awk '{ printf "%s", $1 }') /proc/net/wireless | awk '{ printf "%i%\n", int($3 * 100 / 70) }'
 instance=wlp11s0f3u1
 interval=5
-label=<span color="#ff79c6"> </span>
-border=#ff79c6
+label=<span color="#f5e0dc"> </span>
+border=#f5e0dc
 border_top=1
 border_right=0
 border_bottom=0
@@ -60,8 +60,8 @@ border_left=0
 [battery]
 command=bash ~/.config/i3blocks/battery.sh
 interval=10
-color=#ff5555
-border=#ff5555
+color=#eba0ac
+border=#eba0ac
 border_top=1
 border_right=0
 border_bottom=0
@@ -70,68 +70,68 @@ border_left=0
 [keyboard]
 command=bash ~/.config/i3blocks/xkb_layout
 interval=persist
-label=<span color="#50fa7b"> </span>
-border=#50fa7b
+label=<span color="#74c7ec"> </span>
+border=#74c7ec
 border_top=1
 border_right=0
 border_bottom=0
 border_left=0
 
 [home]
-command= [df -h / | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); print $4 }' != df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); print $4 }'] && df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#50fa7b\">GiB</span>\n", $4 }'
+command= [df -h / | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); print $4 }' != df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); print $4 }'] && df -h /home | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#a6e3a1\">GiB</span>\n", $4 }'
 interval=3
-label=<span color="#50fa7b"> </span>
-border=#50fa7b
+label=<span color="#a6e3a1"> </span>
+border=#a6e3a1
 border_top=1
 border_right=0
 border_bottom=0
 border_left=0
 
 [root]
-command=df -h / | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#f1fa8c\">GiB</span>\n", $4 }'
+command=df -h / | awk 'FNR==2 { gsub(/[A-Za-z]/, ""); printf "%i<span color=\"#f9e2af\">GiB</span>\n", $4 }'
 interval=3
-label=<span color="#f1fa8c"> </span>
-border=#f1fa8c
+label=<span color="#f9e2af"> </span>
+border=#f9e2af
 border_top=1
 border_right=0
 border_bottom=0
 border_left=0
 
 [gpu_stats]
-command=nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{ printf "%02i<span color=\"#ffb86c\">%</span>", $0}' && nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits | awk '{ printf " %i<span color=\"#ffb86c\">°C</span>\n", $0}'
-label=<span color="#ffb86c"><b>GPU: </b></span>
+command=nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{ printf "%02i<span color=\"#fab387\">%</span>", $0}' && nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits | awk '{ printf " %i<span color=\"#ffb86c\">°C</span>\n", $0}'
+label=<span color="#fab387"><b>GPU: </b></span>
 interval=2
-border=#ffb86c
+border=#fab387
 border_top=1
 border_right=0
 border_bottom=0
 border_left=0
 
 [cpu_stats]
-command=sar -u 1 1 | awk 'FNR == 5 { printf "%04.1f<span color=\"#ff5555\">%</span>", (100 - $8) } ' && sensors | awk '{ if ($1 == "CPU" && $2 == "Temperature:") { gsub(/[+°C]/, "") ; printf " %i<span color=\"#ff5555\">°C</span>\n", $3 } }'
+command=sar -u 1 1 | awk 'FNR == 5 { printf "%04.1f<span color=\"#f2cdcd\">%</span>", (100 - $8) } ' && sensors | awk '{ if ($1 == "CPU" && $2 == "Temperature:") { gsub(/[+°C]/, "") ; printf " %i<span color=\"#ff5555\">°C</span>\n", $3 } }'
 interval=2
-label=<span color="#ff5555"><b>CPU: </b></span>
-border=#ff5555
+label=<span color="#f2cdcd"><b>CPU: </b></span>
+border=#f2cdcd
 border_top=1
 border_right=0
 border_bottom=0
 border_left=0
 
 [memory]
-command=free --giga | awk 'FNR==2{ printf "%i<span color=\"#ff79c6\">GiB</span>\n", $7 }'
+command=free --giga | awk 'FNR==2{ printf "%i<span color=\"#f5c2e7\">GiB</span>\n", $7 }'
 interval=2
-label=<span color="#ff79c6"> </span>
-border=#ff79c6
+label=<span color="#f5c2e7"> </span>
+border=#f5c2e7
 border_top=1
 border_right=0
 border_bottom=0
 border_left=0
 
 [volume]
-command=pulseaudio-ctl full-status | awk '{ printf "%i<span color=\"#bd93f9\">%</span>\n", $1 }'
+command=pulseaudio-ctl full-status | awk '{ printf "%i<span color=\"#b4befe\">%</span>\n", $1 }'
 interval=1
-label=<span color="#bd93f9"> </span>
-border=#bd93f9
+label=<span color="#b4befe"> </span>
+border=#b4befe
 border_top=1
 border_right=0
 border_bottom=0
@@ -140,28 +140,28 @@ border_left=0
 [weather]
 command=python ~/.config/i3blocks/weather.py
 interval=600
-label=<span color="#ff5555"> </span>
-border=#ff5555
+label=<span color="#89dceb"> </span>
+border=#89dceb
 border_top=1
 border_right=0
 border_bottom=0
 border_left=0
 
 [time]
-command=date '+%I : %M' | awk '{ printf "%s<span color=\"#50fa7b\">%s</span>%s\n", $1, $2, $3}'
+command=date '+%I : %M' | awk '{ printf "%s<span color=\"#a6e3a1\">%s</span>%s\n", $1, $2, $3}'
 interval=1
-label=<span color="#50fa7b"> </span>
-border=#50fa7b
+label=<span color="#a6e3a1"> </span>
+border=#a6e3a1
 border_top=1
 border_right=0
 border_bottom=0
 border_left=0
 
 [date]
-command=date '+%Y %B %d %A' | awk '{ printf "%s <span color=\"#ff5555\">%s %s</span> %s <span color=\"#ff5555\">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
+command=date '+%Y %B %d %A' | awk '{ printf "%s <span color=\"#f38ba8\">%s %s</span> %s <span color=\"#f38ba8">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
 interval=60
-label=<span color="#ff5555"> </span>
-border=#ff5555
+label=<span color="#f38ba8"> </span>
+border=#f38ba8
 border_top=1
 border_right=0
 border_bottom=0
