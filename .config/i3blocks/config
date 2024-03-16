@@ -93,7 +93,6 @@ border=#f5c2e7
 
 [volume]
 interval=1
-label=<span color="#b4befe"> </span>
 border=#b4befe
 
 [weather]
