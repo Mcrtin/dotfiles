@@ -158,7 +158,7 @@ border_bottom=0
 border_left=0
 
 [date]
-command=date '+%Y %B %d %A' | awk '{ printf "%s <span color=\"#f38ba8\">%s %s</span> %s <span color=\"#f38ba8">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
+command=date '+%Y %B %d %A' | awk '{ printf "%s <span color=\"#f38ba8\">%s %s</span> %s <span color=\"#f38ba8\">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
 interval=60
 label=<span color="#f38ba8"> </span>
 border=#f38ba8
