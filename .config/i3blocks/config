@@ -115,8 +115,8 @@ border_right=0
 border_bottom=0
 border_left=0
 
-[time_cst]
-command=date '+%I : %M %Z' | awk '{ printf "%s<span color=\"#50fa7b\">%s</span>%s<span color=\"#50fa7b\"> %s</span>\n", $1, $2, $3, $4 }'
+[time]
+command=date '+%I : %M' | awk '{ printf "%s<span color=\"#50fa7b\">%s</span>%s\n", $1, $2, $3}'
 interval=1
 label=<span color="#50fa7b"> </span>
 border=#50fa7b

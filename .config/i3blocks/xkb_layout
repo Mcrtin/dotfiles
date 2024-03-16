@@ -6,7 +6,7 @@
 #
 # Defaults:
 font=${font:-monospace}
-font_weight=${font_weight:-bold}
+font_weight=${font_weight:-normal}
 while :
 do
 # Output current layout:
