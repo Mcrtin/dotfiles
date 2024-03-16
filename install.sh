@@ -98,5 +98,4 @@ git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spoti
 feh --bg-scale ~/.config/wallpapers/background.png
 betterlockscreen -u ~/.config/wallpapers/background.png
 
-echo -e "\033[1;36mTo finish setup, change the account details in file://~/.config/spotifyd/spotifyd.conf and change the weather forecast URL in file://~/.config/i3blocks/weather
-/weather.py \e[0m"
+echo -e "\033[1;36mTo finish setup, change the account details in file://~/.config/spotifyd/spotifyd.conf \e[0m"

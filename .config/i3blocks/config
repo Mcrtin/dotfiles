@@ -106,7 +106,7 @@ border_bottom=0
 border_left=0
 
 [weather]
-command=bash ~/.config/i3blocks/weather.py
+command=python ~/.config/i3blocks/weather.py
 interval=600
 label=<span color="#ff5555"> </span>
 border=#ff5555
