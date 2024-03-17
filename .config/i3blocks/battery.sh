@@ -2,7 +2,7 @@
 
 # If ACPI was not installed, this probably is a battery-less computer.
 ACPI_RES=$(acpi -b)
-if [[! $ACPI_RES ]] && exit
+[[ !$ACPI_RES ]] && exit
 
 # Get essential information. Due to som bug with some versions of acpi it is
 # worth filtering the ACPI result from all lines containing "unavailable".
