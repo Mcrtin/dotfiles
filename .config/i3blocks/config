@@ -96,9 +96,8 @@ interval=1
 border=#b4befe
 
 [weather]
-command=python ~/.config/i3blocks/weather.py
+command=python ~/.config/i3blocks/weather.py -c
 interval=60
-label=<span color="#89dceb"> </span>
 border=#89dceb
 
 [time]

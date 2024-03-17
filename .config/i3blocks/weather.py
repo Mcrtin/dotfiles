@@ -84,8 +84,8 @@ class WttrApi:
         '''Get current temperature'''
 
         if self.unit_degree == 'F':
-            return f'{self.info.condition["temp_F"]} \uf045'
-        return f'{self.info.condition["temp_C"]} \uf03c'     
+            return f'{self.info.condition["temp_F"]}°F'
+        return f'{self.info.condition["temp_C"]}°C'     
     
     @staticmethod
     def _get_datetime(time_string, local_time):
@@ -125,8 +125,8 @@ class WttrApi:
         temperature = self._get_temperature()
         weather_icon = self._get_weather_icon()
         if short:
-            return f"<span font='Weather Icons'>{weather_icon} {temperature}</span>"
-        return f"<span font='Weather Icons'>{self.city}: {weather_icon} {temperature}</span>"            
+            return f"<span color=\"#e89dceb\">{weather_icon}<span/> {temperature}"
+        return f"{self.city}: <span color=\"#e89dceb\">{weather_icon}<span/> {temperature}"            
 
 def get_options():
     ''' Get options from command line'''
