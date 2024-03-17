@@ -53,8 +53,8 @@ border=#f5e0dc
 interval=5
 border=#94e2d5
 #INTERFACE=eth0
-INLABEL=
-OUTLABEL=
+INLABEL=<span color="#94e2d5"></span>
+OUTLABEL=<span color="#94e2d5"></span>
 #TREAT_UNKNOWN_AS_UP=0
 
 [battery]
