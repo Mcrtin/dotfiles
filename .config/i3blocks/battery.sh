@@ -7,7 +7,7 @@ then
     # Get essential information. Due to som bug with some versions of acpi it is
     # worth filtering the ACPI result from all lines containing "unavailable".
     BAT_LEVEL_ALL=$(echo "$ACPI_RES" | grep -v "unavailable" | grep -E -o "[0-9][0-9]?[0-9]?%")
-    BAT_LEVEL=$(echo "$BAT_LEVEL_ALL" | awk -F"%" 'BEGIN{tot=0;i=0} {i++; tot+=$1} END{printf("%d%%\n", tot/i)}')
+    BAT_LEVEL=$(echo "$BAT_LEVEL_ALL" | awk -F"%" 'BEGIN{tot=0;i=0} {i++; tot+=$1} END{printf("%d%\n", tot/i)}')
     TIME_LEFT=$(echo "$ACPI_RES" | grep -v "unavailable" | grep -E -o "[0-9]{2}:[0-9]{2}:[0-9]{2}")
     IS_CHARGING=$(echo "$ACPI_RES" | grep -v "unavailable" | awk '{ printf("%s\n", substr($3, 0, length($3)-1) ) }')
 
@@ -17,10 +17,13 @@ then
     then
         TIME_LEFT="00:00:00"
     fi
-
+    icons           = ('󱃍' '󰁺' '󰁻' '󰁼' '󰁽' '󰁾' '󰁿' '󰂀' '󰂁' '󰂂' '󰁹')
+    icons_charging  = ('󰢟' '󰢜' '󰂆' '󰂇' '󰂈' '󰢝' '󰂉' '󰢞' '󰂊' '󰂋' '󰂅')
     # Print full text. The charging data.
     TIME_LEFT=$(echo $TIME_LEFT | awk '{ printf("%s\n", substr($1, 0, 5)) }')
-    echo "🔋$BAT_LEVEL ⏳$TIME_LEFT "
+    INDEX=echo "$BAT_LEVEL / 10" | bc
+    echo -n [ "$IS_CHARGING" = "Charging" ] ? $icons[$INDEX] : $icons_charging[$INDEX]
+    echo "$BAT_LEVEL% 󰔟$TIME_LEFT"
 
     # Print the short text.
     echo "BAT: $BAT_LEVEL"

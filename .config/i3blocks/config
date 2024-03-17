@@ -112,3 +112,4 @@ command=date '+%a, %b %d'
 interval=60
 label=<span color="#f38ba8"> </span>
 border=#f38ba8
+border_top=1
