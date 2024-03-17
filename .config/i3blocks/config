@@ -81,7 +81,7 @@ border=#fab387
 
 [cpu]
 interval=2
-label=<span color="#f2cdcd"><b>CPU: </b></span>
+label=<span color="#f2cdcd"><b> </b></span>
 border=#f2cdcd
 
 [memory]
