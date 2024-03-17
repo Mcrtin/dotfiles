@@ -17,8 +17,8 @@ then
     then
         TIME_LEFT="00:00:00"
     fi
-    icons           = ('󱃍' '󰁺' '󰁻' '󰁼' '󰁽' '󰁾' '󰁿' '󰂀' '󰂁' '󰂂' '󰁹')
-    icons_charging  = ('󰢟' '󰢜' '󰂆' '󰂇' '󰂈' '󰢝' '󰂉' '󰢞' '󰂊' '󰂋' '󰂅')
+    icons=('󱃍' '󰁺' '󰁻' '󰁼' '󰁽' '󰁾' '󰁿' '󰂀' '󰂁' '󰂂' '󰁹')
+    icons_charging=('󰢟' '󰢜' '󰂆' '󰂇' '󰂈' '󰢝' '󰂉' '󰢞' '󰂊' '󰂋' '󰂅')
     # Print full text. The charging data.
     TIME_LEFT=$(echo $TIME_LEFT | awk '{ printf("%s\n", substr($1, 0, 5)) }')
     INDEX=echo "$BAT_LEVEL / 10" | bc
