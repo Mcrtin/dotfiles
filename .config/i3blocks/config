@@ -49,6 +49,14 @@ interval=5
 label=<span color="#f5e0dc"> </span>
 border=#f5e0dc
 
+[bandwidth]
+interval=5
+border=#94e2d5
+#INTERFACE=eth0
+INLABEL=
+OUTLABEL=
+#TREAT_UNKNOWN_AS_UP=0
+
 [battery]
 command=bash ~/.config/i3blocks/battery.sh
 interval=10
