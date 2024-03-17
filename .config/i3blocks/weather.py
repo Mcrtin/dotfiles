@@ -59,7 +59,6 @@ CODE_TO_ICON = {
     "395": Icon('\ue315', '\ue315')   # Moderate or heavy snow with thunder
 }
 
-
 class WttrApi:
     def __init__(self, city, unit_degree):
         self.city = city
@@ -117,8 +116,8 @@ class WttrApi:
 
         weather_code = self.info.condition['weatherCode']
         if self._is_day():
-            return CODE_TO_ICON[weather_code].day
-        return CODE_TO_ICON[weather_code].night
+            return CODE_TO_ICON[weather_code][0]
+        return CODE_TO_ICON[weather_code][1]
 
     def get_weather_status(self, short):
         '''i3blocks uses pango to render the folowin output into the desired icons'''
