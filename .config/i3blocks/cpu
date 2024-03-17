@@ -35,4 +35,4 @@ else
   echo -n "?"
 fi
 
-sensors -u | awk 'BEGIN{a = 0} {if (match($1, /temp1_input:/) int($2) > a) a = int($1)} END{printf("%i°C", a)}'
+sensors -u | awk 'BEGIN{a = 0} {if (match($1, /temp1_input:/) && int($2) > a) a = int($2)} END{printf(" %i°C\n", a)}'
