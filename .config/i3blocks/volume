@@ -9,5 +9,8 @@ esac
 
 #Display volume
 VOLUME=$(pamixer --get-volume)
-[[ $(pamixer --get-mute) = "true" ]] && echo -n '<span color="#b4befe"> </span>' || [[ $VOLUME = 0 ]] && echo -n '<span color="#b4befe"> </span>' || [[ $VOLUME < 50 ]] && echo -n '<span color="#b4befe"> </span>' || echo -n '<span color="#b4befe"> </span>';
+([[ $(pamixer --get-mute) = "true" ]] && echo -n '<span color="#b4befe"> </span>') || 
+([[ $VOLUME = 0 ]] && echo -n '<span color="#b4befe"> </span>') || 
+([[ $VOLUME < 50 ]] && echo -n '<span color="#b4befe"> </span>') ||
+(echo -n '<span color="#b4befe"> </span>')
 echo $VOLUME%;
