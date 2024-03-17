@@ -108,7 +108,7 @@ label=<span color="#a6e3a1"> </span>
 border=#a6e3a1
 
 [date]
-command=date '+%B %d %A' | awk '{ printf "%s %s %s", $1, $2, substr ($3, 0, 2) }'
+command=date '+%a, %b %d'
 interval=60
 label=<span color="#f38ba8"> </span>
 border=#f38ba8
