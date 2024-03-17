@@ -21,9 +21,9 @@ then
     icons_charging=('󰢟' '󰢜' '󰂆' '󰂇' '󰂈' '󰢝' '󰂉' '󰢞' '󰂊' '󰂋' '󰂅')
     # Print full text. The charging data.
     TIME_LEFT=$(echo $TIME_LEFT | awk '{ printf("%s\n", substr($1, 0, 5)) }')
-    INDEX=echo "$BAT_LEVEL / 10" | bc
-    echo -n [ "$IS_CHARGING" = "Charging" ] ? $icons[$INDEX] : $icons_charging[$INDEX]
-    echo "$BAT_LEVEL% 󰔟$TIME_LEFT"
+    ((INDEX=$BAT_LEVEL / 10))
+    echo -n [ "$IS_CHARGING" = "Charging" ] ? ${icons_charging[$INDEX]} : ${icons[$INDEX]}
+    echo " $BAT_LEVEL% 󰔟$TIME_LEFT"
 
     # Print the short text.
     echo "BAT: $BAT_LEVEL"
