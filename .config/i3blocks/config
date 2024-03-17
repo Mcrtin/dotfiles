@@ -79,8 +79,7 @@ label=<span color="#fab387"><b>GPU: </b></span>
 interval=2
 border=#fab387
 
-[cpu_stats]
-command=sar -u 1 1 | awk 'FNR == 5 { printf "%04.1f<span color=\"#f2cdcd\">%</span>", (100 - $8) } ' && sensors | awk '{ if ($1 == "CPU" && $2 == "Temperature:") { gsub(/[+°C]/, "") ; printf " %i<span color=\"#ff5555\">°C</span>\n", $3 } }'
+[cpu]
 interval=2
 label=<span color="#f2cdcd"><b>CPU: </b></span>
 border=#f2cdcd
