@@ -125,8 +125,8 @@ class WttrApi:
         temperature = self._get_temperature()
         weather_icon = self._get_weather_icon()
         if short:
-            return f"<span color=\"#e89dceb\">{weather_icon}<span/> {temperature}"
-        return f"{self.city}: <span color=\"#e89dceb\">{weather_icon}<span/> {temperature}"            
+            return f"{weather_icon} {temperature}"
+        return f"{self.city}: {weather_icon} {temperature}"            
 
 def get_options():
     ''' Get options from command line'''

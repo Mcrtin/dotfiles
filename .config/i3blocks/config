@@ -96,18 +96,19 @@ interval=1
 border=#b4befe
 
 [weather]
-command=python ~/.config/i3blocks/weather.py -c
+command=python ~/.config/i3blocks/weather.py -s
 interval=60
 border=#89dceb
+color=#89dceb
 
 [time]
-command=date '+%I : %M' | awk '{ printf "%s<span color=\"#a6e3a1\">%s</span>%s\n", $1, $2, $3}'
+command=date '+%I %M' | awk '{ printf "%s<span color=\"#a6e3a1\">:</span>%s\n", $1, $2}'
 interval=1
 label=<span color="#a6e3a1"> </span>
 border=#a6e3a1
 
 [date]
-command=date '+%Y %B %d %A' | awk '{ printf "%s <span color=\"#f38ba8\">%s %s</span> %s <span color=\"#f38ba8\">%s %s</span>\n", $1, $2, $3, $4, $5, $6 }'
+command=date '+%B %d %A' | awk '{ printf "%s %s %s", $1, $2, substr ($3, 0, 2) }'
 interval=60
 label=<span color="#f38ba8"> </span>
 border=#f38ba8
