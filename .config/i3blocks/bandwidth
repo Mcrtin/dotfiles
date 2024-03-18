@@ -98,7 +98,7 @@ rx_kib=$(( $rx_rate >> 10 ))
 if hash bc 2>/dev/null && [[ "$rx_rate" -gt 1048576 ]]; then
   printf '%sM' "`echo "scale=1; $rx_kib / 1024" | bc`"
 else
-  echo -n "${rx_kib}K"
+  echo -n "${rx_kib}KiB"
 fi
 
 echo -n " "
@@ -109,5 +109,5 @@ tx_kib=$(( $tx_rate >> 10 ))
 if hash bc 2>/dev/null && [[ "$tx_rate" -gt 1048576 ]]; then
   printf '%sM\n' "`echo "scale=1; $tx_kib / 1024" | bc`"
 else
-  echo "${tx_kib}K"
+  echo "${tx_kib}KiB"
 fi

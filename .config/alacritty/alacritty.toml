@@ -5,3 +5,6 @@ import = [
   # "~/.config/alacritty/catppuccin-macchiato.toml"
   "~/.config/alacritty/catppuccin-mocha.toml"
 ]
+
+[font]
+size = 12.0
