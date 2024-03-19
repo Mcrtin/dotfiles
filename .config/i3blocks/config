@@ -83,13 +83,13 @@ border=#f9e2af
 
 [gpu_stats]
 command=nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{ printf "%02i<span color=\"#fab387\">%</span>", $0}' && nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits | awk '{ printf " %i<span color=\"#ffb86c\">°C</span>\n", $0}'
-label=<span color="#fab387"><b>GPU: </b></span>
+label=<span color="#fab387"><b> </b></span>
 interval=2
 border=#fab387
 
 [cpu]
 interval=2
-label=<span color="#f2cdcd"><b> </b></span>
+label=<span color="#f2cdcd"><b> </b></span>
 border=#f2cdcd
 
 [memory]
