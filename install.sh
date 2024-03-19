@@ -45,12 +45,12 @@ sudoFunc () {
     paman -Rs i3lock --noconfirm
 
     # Install packages
-    pacman -S --needed man-db tldr git base-devel jack2 neovim qutebrowser translate-shell \
+    pacman -S --needed --noconfirm man-db tldr git base-devel jack2 neovim qutebrowser translate-shell \
     brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty \
     ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship \
     discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk picom iwd networkmanager \
-    iio-sensor-proxy noto-fonts-emoji sysstat python python-requests lm_sensors acpi fzf dust \
-    btop python-neovim xclip powertop fd ripgrep nodejs tree-sitter-cli --noconfirm
+    network-manager-applet iio-sensor-proxy noto-fonts-emoji sysstat python python-requests lm_sensors \
+    acpi fzf dust btop python-neovim xclip powertop fd ripgrep nodejs tree-sitter-cli
 
     systemctl enable NetworkManager.service
     systemctl enable iio-sensor-proxy

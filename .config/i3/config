@@ -281,3 +281,4 @@ exec --no-startup-id picom -b &
 exec_always --no-startup-id playerctld daemon &
 exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/background.png &
 exec_always --no-startup-id powertop --auto-tune &
+exec_always --ho-startup-id nm-applet &
