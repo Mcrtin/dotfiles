@@ -82,6 +82,8 @@ sudo systemctl enable auto-cpufreq
 # Configure Bash
 cp -f .bashrc ~
 
+cp -f .Xresources ~
+
 
 # Install LazyVim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
