@@ -50,7 +50,7 @@ sudoFunc () {
     ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship \
     discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk picom iwd networkmanager \
     network-manager-applet iio-sensor-proxy noto-fonts-emoji sysstat python python-requests lm_sensors \
-    acpi fzf dust btop python-neovim xclip powertop fd ripgrep nodejs tree-sitter-cli
+    acpi fzf dust btop python-neovim xclip powertop fd ripgrep nodejs tree-sitter-cli mpv youtube-viewer
 
     systemctl enable NetworkManager.service
     systemctl enable iio-sensor-proxy
@@ -103,4 +103,4 @@ git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spoti
 feh --bg-scale ~/.config/wallpapers/background.png
 betterlockscreen -u ~/.config/wallpapers/background.png
 
-echo -e "\033[1;36mTo finish setup, change the account details in file://~/.config/spotifyd/spotifyd.conf \e[0m"
+echo -e "\033[1;36mTo finish setup, change the account details in file://$(pwd)/.config/spotifyd/spotifyd.conf \e[0m"
