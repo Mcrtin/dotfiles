@@ -45,7 +45,7 @@ sudoFunc () {
     paman -Rs i3lock --noconfirm
 
     # Install packages
-    pacman -S --needed --noconfirm man-db tldr git base-devel jack2 neovim qutebrowser translate-shell \
+    pacman -S --needed --noconfirm man-db tldr git base-devel jack2 neovim firefox translate-shell \
     brightnessctl spotifyd pulseaudio pavucontrol rofi aerc lazygit tmux dunst alacritty \
     ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship \
     discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk picom iwd networkmanager \
@@ -95,8 +95,7 @@ git clone https://github.com/catppuccin/rofi.git
 
 # Install Catppuccin for alacritty
 curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
-# Install Catppuccin for qute
-git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/catppuccin
+
 # Install Catppucccin for spotify-tui
 git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spotify-tui/ && cp spotify-tui/mocha.yml ~/.config/spotify-tui/
 
