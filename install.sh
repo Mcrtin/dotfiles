@@ -50,8 +50,8 @@ sudoFunc () {
     ttf-jetbrains-mono-nerd fprintd copyq lightdm-webkit2-greeter xorg-xdpyinfo exa starship \
     discord playerctl pamixer s-nail neofetch awk arandr zoxide jre-openjdk picom iwd networkmanager \
     network-manager-applet iio-sensor-proxy noto-fonts-emoji sysstat python python-requests lm_sensors \
-    acpi fzf dust btop python-neovim xclip powertop fd ripgrep nodejs tree-sitter-cli mpv youtube-viewer
-
+    acpi fzf dust btop python-neovim xclip powertop fd ripgrep nodejs tree-sitter-cli mpv
+    
     systemctl enable NetworkManager.service
     systemctl enable iio-sensor-proxy
 
@@ -71,7 +71,10 @@ then
 fi
 
 
-yay -S --needed spotify-tui catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git libinput-gestures lightdm-webkit-theme-aether auto-cpufreq betterlockscreen networkmanager pulseaudio-ctl xkb-switch --noconfirm
+yay -S --needed --noconfirm spotify-tui catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git \
+libinput-gestures lightdm-webkit-theme-aether auto-cpufreq betterlockscreen networkmanager \
+pulseaudio-ctl xkb-switch youtube-viewer tmux-plugin-manager
+
 
 systemctl enable --user pulseaudio
 systemctl enable --user spotifyd.service
@@ -83,6 +86,9 @@ sudo systemctl enable auto-cpufreq
 cp -f .bashrc ~
 
 cp -f .Xresources ~
+
+cp -f .tmux.conf ~
+cp -f .tmux.reset.conf ~
 
 
 # Install LazyVim
@@ -104,4 +110,4 @@ git clone https://github.com/catppuccin/spotify-tui.git && mkdir ~/.config/spoti
 feh --bg-scale ~/.config/wallpapers/background.png
 betterlockscreen -u ~/.config/wallpapers/background.png
 
-echo -e "\033[1;36mTo finish setup, change the account details in file://$(pwd)/.config/spotifyd/spotifyd.conf \e[0m"
+echo -e "\033[1;36mTo finish setup, change the account details in file://$(cd && pwd)/.config/spotifyd/spotifyd.conf \e[0m"
